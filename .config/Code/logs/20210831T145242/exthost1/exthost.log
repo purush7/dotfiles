@@ -1,0 +1,89 @@
+[2021-08-31 14:52:44.151] [exthost] [info] extension host started
+[2021-08-31 14:52:44.151] [exthost] [info] Skipping acquiring lock for /home/purush/.config/Code/User/workspaceStorage/7b320bacc6ecbc89baa30997d3c56d96.
+[2021-08-31 14:52:44.296] [exthost] [info] ExtensionService#_doActivateExtension vscode.microsoft-authentication {"startup":false,"extensionId":{"value":"vscode.microsoft-authentication","_lower":"vscode.microsoft-authentication"},"activationEvent":"onAuthenticationRequest:microsoft"}
+[2021-08-31 14:52:44.313] [exthost] [info] ExtensionService#loadCommonJSModule file:///usr/share/code/resources/app/extensions/microsoft-authentication/dist/extension.js
+[2021-08-31 14:52:44.334] [exthost] [info] ExtensionService#_doActivateExtension vscode.debug-auto-launch {"startup":true,"extensionId":{"value":"vscode.debug-auto-launch","_lower":"vscode.debug-auto-launch"},"activationEvent":"*"}
+[2021-08-31 14:52:44.334] [exthost] [info] ExtensionService#loadCommonJSModule file:///usr/share/code/resources/app/extensions/debug-auto-launch/dist/extension
+[2021-08-31 14:52:44.337] [exthost] [info] ExtensionService#_doActivateExtension vscode.git {"startup":true,"extensionId":{"value":"vscode.github","_lower":"vscode.github"},"activationEvent":"*"}
+[2021-08-31 14:52:44.337] [exthost] [info] ExtensionService#loadCommonJSModule file:///usr/share/code/resources/app/extensions/git/dist/main
+[2021-08-31 14:52:44.518] [exthost] [info] ExtensionService#_doActivateExtension vscode.github {"startup":true,"extensionId":{"value":"vscode.github","_lower":"vscode.github"},"activationEvent":"*"}
+[2021-08-31 14:52:44.518] [exthost] [info] ExtensionService#loadCommonJSModule file:///usr/share/code/resources/app/extensions/github/dist/extension.js
+[2021-08-31 14:52:44.578] [exthost] [info] eager extensions activated
+[2021-08-31 14:52:44.591] [exthost] [info] ExtensionService#_doActivateExtension ms-vscode.js-debug {"startup":false,"extensionId":{"value":"ms-vscode.js-debug","_lower":"ms-vscode.js-debug"},"activationEvent":"onCommand:extension.js-debug.clearAutoAttachVariables"}
+[2021-08-31 14:52:44.591] [exthost] [info] ExtensionService#loadCommonJSModule file:///usr/share/code/resources/app/extensions/ms-vscode.js-debug/src/extension.js
+[2021-08-31 14:52:44.710] [exthost] [info] ExtensionService#_doActivateExtension vscode.emmet {"startup":false,"extensionId":{"value":"vscode.emmet","_lower":"vscode.emmet"},"activationEvent":"onStartupFinished"}
+[2021-08-31 14:52:44.711] [exthost] [info] ExtensionService#loadCommonJSModule file:///usr/share/code/resources/app/extensions/emmet/dist/node/emmetNodeMain
+[2021-08-31 14:52:44.717] [exthost] [info] ExtensionService#_doActivateExtension vscode.merge-conflict {"startup":false,"extensionId":{"value":"vscode.merge-conflict","_lower":"vscode.merge-conflict"},"activationEvent":"onStartupFinished"}
+[2021-08-31 14:52:44.717] [exthost] [info] ExtensionService#loadCommonJSModule file:///usr/share/code/resources/app/extensions/merge-conflict/dist/mergeConflictMain
+[2021-08-31 14:52:44.822] [exthost] [info] ExtensionService#_doActivateExtension vscode.github-authentication {"startup":false,"extensionId":{"value":"vscode.github-authentication","_lower":"vscode.github-authentication"},"activationEvent":"onAuthenticationRequest:github"}
+[2021-08-31 14:52:44.822] [exthost] [info] ExtensionService#loadCommonJSModule file:///usr/share/code/resources/app/extensions/github-authentication/dist/extension.js
+[2021-08-31 14:53:19.479] [exthost] [info] ExtensionService#_doActivateExtension formulahendry.code-runner {"startup":false,"extensionId":{"value":"formulahendry.code-runner","_lower":"formulahendry.code-runner"},"activationEvent":"onStartupFinished"}
+[2021-08-31 14:53:19.480] [exthost] [info] ExtensionService#loadCommonJSModule file:///home/purush/.vscode/extensions/formulahendry.code-runner-0.11.5/out/src/extension
+[2021-08-31 14:53:19.984] [exthost] [info] ExtensionService#_doActivateExtension eamodio.gitlens {"startup":false,"extensionId":{"value":"eamodio.gitlens","_lower":"eamodio.gitlens"},"activationEvent":"onStartupFinished"}
+[2021-08-31 14:53:19.984] [exthost] [info] ExtensionService#loadCommonJSModule file:///home/purush/.vscode/extensions/eamodio.gitlens-11.6.0/dist/gitlens
+[2021-08-31 14:53:20.261] [exthost] [info] ExtensionService#_doActivateExtension CoenraadS.bracket-pair-colorizer-2 {"startup":false,"extensionId":{"value":"CoenraadS.bracket-pair-colorizer-2","_lower":"coenraads.bracket-pair-colorizer-2"},"activationEvent":"onStartupFinished"}
+[2021-08-31 14:53:20.262] [exthost] [info] ExtensionService#loadCommonJSModule file:///home/purush/.vscode/extensions/coenraads.bracket-pair-colorizer-2-0.2.1/out/src/extension
+[2021-08-31 14:53:25.190] [exthost] [info] ExtensionService#_doActivateExtension donjayamanne.githistory {"startup":false,"extensionId":{"value":"donjayamanne.githistory","_lower":"donjayamanne.githistory"},"activationEvent":"*"}
+[2021-08-31 14:53:25.190] [exthost] [info] ExtensionService#loadCommonJSModule file:///home/purush/.vscode/extensions/donjayamanne.githistory-0.6.18/dist/src/extension
+[2021-08-31 14:53:26.924] [exthost] [info] ExtensionService#_doActivateExtension rangav.vscode-thunder-client {"startup":false,"extensionId":{"value":"rangav.vscode-thunder-client","_lower":"rangav.vscode-thunder-client"},"activationEvent":"onStartupFinished"}
+[2021-08-31 14:53:26.924] [exthost] [info] ExtensionService#loadCommonJSModule file:///home/purush/.vscode/extensions/rangav.vscode-thunder-client-1.9.1/dist/extension
+[2021-08-31 14:53:31.409] [exthost] [info] ExtensionService#_doActivateExtension GitHub.copilot {"startup":false,"extensionId":{"value":"GitHub.copilot","_lower":"github.copilot"},"activationEvent":"*"}
+[2021-08-31 14:53:31.409] [exthost] [info] ExtensionService#loadCommonJSModule file:///home/purush/.vscode/extensions/github.copilot-1.4.2535/dist/extension
+[2021-08-31 14:53:34.496] [exthost] [info] ExtensionService#_doActivateExtension ms-vscode-remote.remote-containers {"startup":false,"extensionId":{"value":"ms-vscode-remote.remote-containers","_lower":"ms-vscode-remote.remote-containers"},"activationEvent":"onStartupFinished"}
+[2021-08-31 14:53:34.496] [exthost] [info] ExtensionService#loadCommonJSModule file:///home/purush/.vscode/extensions/ms-vscode-remote.remote-containers-0.191.1/dist/extension/extension
+[2021-08-31 14:53:34.816] [exthost] [info] ExtensionService#_doActivateExtension alefragnani.project-manager {"startup":false,"extensionId":{"value":"alefragnani.project-manager","_lower":"alefragnani.project-manager"},"activationEvent":"*"}
+[2021-08-31 14:53:34.817] [exthost] [info] ExtensionService#loadCommonJSModule file:///home/purush/.vscode/extensions/alefragnani.project-manager-12.3.0/dist/extension
+[2021-08-31 14:53:35.011] [exthost] [info] ExtensionService#_doActivateExtension vscodevim.vim {"startup":false,"extensionId":{"value":"vscodevim.vim","_lower":"vscodevim.vim"},"activationEvent":"*"}
+[2021-08-31 14:53:35.011] [exthost] [info] ExtensionService#loadCommonJSModule file:///home/purush/.vscode/extensions/vscodevim.vim-1.21.7/out/extension
+[2021-08-31 14:53:40.927] [exthost] [info] ExtensionService#_doActivateExtension esbenp.prettier-vscode {"startup":false,"extensionId":{"value":"esbenp.prettier-vscode","_lower":"esbenp.prettier-vscode"},"activationEvent":"onStartupFinished"}
+[2021-08-31 14:53:40.928] [exthost] [info] ExtensionService#loadCommonJSModule file:///home/purush/.vscode/extensions/esbenp.prettier-vscode-8.1.0/dist/extension
+[2021-08-31 14:53:41.181] [exthost] [info] ExtensionService#_doActivateExtension ms-vscode.cpptools {"startup":false,"extensionId":{"value":"ms-vscode.cpptools","_lower":"ms-vscode.cpptools"},"activationEvent":"*"}
+[2021-08-31 14:53:41.181] [exthost] [info] ExtensionService#loadCommonJSModule file:///home/purush/.vscode/extensions/ms-vscode.cpptools-1.6.0/dist/main
+[2021-08-31 14:54:19.412] [exthost] [info] ExtensionService#_doActivateExtension ms-vsliveshare.vsliveshare {"startup":false,"extensionId":{"value":"ms-vsliveshare.vsliveshare","_lower":"ms-vsliveshare.vsliveshare"},"activationEvent":"*"}
+[2021-08-31 14:54:19.413] [exthost] [info] ExtensionService#loadCommonJSModule file:///home/purush/.vscode/extensions/ms-vsliveshare.vsliveshare-1.0.4761/out/prod/extension-prod
+[2021-08-31 14:59:12.803] [exthost] [info] ExtensionService#_doActivateExtension aaron-bond.better-comments {"startup":false,"extensionId":{"value":"aaron-bond.better-comments","_lower":"aaron-bond.better-comments"},"activationEvent":"onLanguage:shellscript"}
+[2021-08-31 14:59:12.803] [exthost] [info] ExtensionService#loadCommonJSModule file:///home/purush/.vscode/extensions/aaron-bond.better-comments-2.1.0/out/extension
+[2021-08-31 16:23:18.548] [exthost] [warning] TextEditor is closed/disposed
+[2021-08-31 16:23:18.904] [exthost] [info] ExtensionService#_doActivateExtension vscode.extension-editing {"startup":false,"extensionId":{"value":"vscode.extension-editing","_lower":"vscode.extension-editing"},"activationEvent":"onLanguage:markdown"}
+[2021-08-31 16:23:18.905] [exthost] [info] ExtensionService#loadCommonJSModule file:///usr/share/code/resources/app/extensions/extension-editing/dist/extensionEditingMain
+[2021-08-31 16:23:18.933] [exthost] [info] ExtensionService#_doActivateExtension vscode.markdown-language-features {"startup":false,"extensionId":{"value":"vscode.markdown-language-features","_lower":"vscode.markdown-language-features"},"activationEvent":"onLanguage:markdown"}
+[2021-08-31 16:23:18.933] [exthost] [info] ExtensionService#loadCommonJSModule file:///usr/share/code/resources/app/extensions/markdown-language-features/dist/extension
+[2021-08-31 16:23:19.018] [exthost] [info] ExtensionService#_doActivateExtension shd101wyy.markdown-preview-enhanced {"startup":false,"extensionId":{"value":"shd101wyy.markdown-preview-enhanced","_lower":"shd101wyy.markdown-preview-enhanced"},"activationEvent":"onLanguage:markdown"}
+[2021-08-31 16:23:19.018] [exthost] [info] ExtensionService#loadCommonJSModule file:///home/purush/.vscode/extensions/shd101wyy.markdown-preview-enhanced-0.6.0/out/src/extension
+[2021-08-31 16:23:19.768] [exthost] [info] ExtensionService#_doActivateExtension vscode.markdown-math {"startup":false,"extensionId":{"value":"vscode.markdown-language-features","_lower":"vscode.markdown-language-features"},"activationEvent":"api"}
+[2021-08-31 16:23:19.768] [exthost] [info] ExtensionService#loadCommonJSModule file:///usr/share/code/resources/app/extensions/markdown-math/dist/extension
+[2021-08-31 16:23:47.153] [exthost] [warning] TextEditor is closed/disposed
+[2021-08-31 16:24:47.829] [exthost] [warning] TextEditor is closed/disposed
+[2021-08-31 16:24:50.532] [exthost] [warning] TextEditor is closed/disposed
+[2021-08-31 16:24:53.076] [exthost] [warning] TextEditor is closed/disposed
+[2021-08-31 16:24:57.558] [exthost] [warning] TextEditor is closed/disposed
+[2021-08-31 16:29:07.827] [exthost] [warning] TextEditor is closed/disposed
+[2021-08-31 16:29:08.921] [exthost] [warning] TextEditor is closed/disposed
+[2021-08-31 16:29:39.063] [exthost] [warning] TextEditor is closed/disposed
+[2021-08-31 16:30:26.970] [exthost] [info] extension host terminating: renderer closed the socket
+[2021-08-31 16:30:27.063] [exthost] [error] TypeError: Cannot read property 'timeTelemetryCollector' of undefined
+    at Object.deactivate (/home/purush/.vscode/extensions/ms-vscode.cpptools-1.6.0/dist/main.js:46550:13)
+    at Object.deactivate (/home/purush/.vscode/extensions/ms-vscode.cpptools-1.6.0/dist/main.js:51553:27)
+    at v._deactivate (/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:90:11286)
+    at /usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:90:10000
+    at Array.map (<anonymous>)
+    at v.deactivateAll (/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:90:9988)
+    at P.terminate (/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:94:725)
+    at h (/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:104:32088)
+    at Socket.<anonymous> (/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:104:29731)
+    at Socket.emit (events.js:327:22)
+    at Pipe.<anonymous> (net.js:673:12)
+[2021-08-31 16:30:27.077] [exthost] [warning] {"name":"Canceled"}
+[2021-08-31 16:30:27.692] [exthost] [error] TypeError: r.some is not a function
+    at Function.saveToDisk (/home/purush/.vscode/extensions/vscodevim.vim-1.21.7/src/register/register.ts:350:30)
+    at Object.e.deactivate (/home/purush/.vscode/extensions/vscodevim.vim-1.21.7/extension.ts:37:18)
+    at v._deactivate (/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:90:11286)
+    at /usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:90:10000
+    at Array.map (<anonymous>)
+    at v.deactivateAll (/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:90:9988)
+    at P.terminate (/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:94:725)
+    at h (/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:104:32088)
+    at Socket.<anonymous> (/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:104:29731)
+    at Socket.emit (events.js:327:22)
+    at Pipe.<anonymous> (net.js:673:12)
+[2021-08-31 16:30:28.076] [exthost] [info] exiting with code 0

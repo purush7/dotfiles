@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MYKI - Choose Backup File</title>
+    <link rel="stylesheet" href="backup.min.css">
+</head>
+<body>
+<div class="container">
+    <img src="../images/logo/icon_180.png">
+    <h1>Select a backup file to import</h1>
+    <input type="file" name="file" id="fileID"/>
+    <label for="fileID">
+        <img src="../images/restore-upload-icon.png">
+        Choose a file (.myki)</label>
+    <div class="myki-notification hide">
+        <div>
+            <div class="img-container">
+                <img class="img-success img-warning" src="../images/Check.png">
+                <img class="img-danger" src="../images/X.png">
+            </div>
+            <h4 class="content">
+                Please update your mobile app to enable this feature.
+            </h4>
+        </div>
+    </div>
+    <script src="chooseFile.min.js"></script>
+</div>
+</body>
+</html>

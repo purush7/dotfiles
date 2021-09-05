@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html ng-app="myki_import">
+<head>
+    <meta charset="utf-8"/>
+    <title>MYKI | Import Accounts</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+          integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/import.min.css">
+</head>
+<body bgcolor="#000000" ng-controller="MainCtrl" id="page-top">
+<div class="preloader text-align-center height-p100" ng-class="{'display-none-imp': true}"
+     style="display:flex; flex-direction:column; justify-content:center; align-items:center;">
+    <img height=50 style="margin-bottom: 10px;" src="../images/import/logo_website_top.png"/>
+    <img width=50 src="../images/import/rolling.svg"/>
+</div>
+<div class="height-p100">
+    <div class="onBoardingContainer layout-column height-p100">
+
+        <div class="onBoardingHeaderBody layout-column flex">
+            <div class="onboardingHeader">
+                <div class="onboardingText layout-align-center-center layout-column">
+                    <img height="50" class="margin-20" src="../images/import/logo_website_top.png">
+                    <h1 class="title">{{header.titleCode}}</h1>
+                    <h2 class="desc">{{header.msgCode}} <span class="color-myki clickable"
+                                                              ng-click="header.msg2Onclick()"> {{header.msg2Code}} </span>
+                    </h2>
+                </div>
+            </div>
+            <div class="onBoardingBody flex">
+                <div class="importMethods {{'importMethods-'+importTypes.length}}"
+                     ng-class="{'hidden': state != 'selectType'}">
+                    <div class="box" ng-repeat="type in importTypes" ng-click="selectType(type)" id="{{type.btnId}}"
+                         ng-class="{'done': type.done, 'selected': type.name == selectedType.name}">
+                        <div class="radioCircle">
+                        </div>
+                        <img ng-src="{{type.img}}" alt="{{type.name}}"/>
+                        <span class="import-label">{{type.name}}</span>
+                        <span class="import-desc">{{type.desc}}</span>
+                    </div>
+                </div>
+                <div class="importMethods {{'importMethods-'+filteredImportMethods.length}}"
+                     ng-class="{'hidden': state != 'method'}">
+                    <div class="box"
+                         ng-repeat="type in filteredImportMethods = (importMethods | filter:{itemType:selectedType.code})"
+                         ng-click="selectMethod(type)" id="{{type.btnId}}"
+                         ng-class="{'done': type.done, 'selected': type.name == selectedMethod.name}">
+                        <div class="radioCircle">
+                        </div>
+                        <img ng-src="{{type.img}}" alt="{{type.name}}"/>
+                        <span class="import-label">{{type.name}}</span>
+                        <span class="import-desc">{{type.desc}}</span>
+                    </div>
+                </div>
+                <div class="width-p100 max-width-650 margin-auto" ng-class="{'hidden': state != 'fileImport'}">
+                    <span class="dropzoneTitle max-width-650 margin-auto">{{dropzoneTitle}}</span>
+                    <div class="dropzone sm" options="dzOptions" methods="dzMethods" callbacks="dzCallbacks"
+                         ng-dropzone></div>
+                </div>
+                <div ng-class="{'hidden': state != 'mapping'}" class="flex">
+                    <span class="dropzoneTitle">{{dropzoneTitle}} - {{itemCount}}</span>
+                    <div class="myki-widget layout-row csvMappingTable margin-vertical-15">
+                        <table class="table myki-table">
+                            <thead>
+                            <tr>
+                                <th>Column Header from File</th>
+                                <th>Preview Information</th>
+                                <th class="mykiPropertyColumn"> MYKI Property</th>
+                                <th class="entity-checkbox">Status</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr ng-repeat="row in mappingRows">
+                                <td>
+                                    {{row.fileHeader}}
+                                </td>
+                                <td>
+                                    <ul>
+                                        <li ng-repeat="p in row.preview">{{p.value}}</li>
+                                    </ul>
+                                </td>
+                                <td class="mykiPropertyColumn">
+                                    <div class="mappingColumn layout-row clickable"
+                                         popover-placement="{{($index < 2)?'bottom-right':'top-right'}}"
+                                         uib-popover-template="popoverTemplateUrl" popover-trigger="'outsideClick'"
+                                         popover-is-open="row.popverIsOpen" ng-class="{'hidden': row.dontImport}">
+                                        <div class="flex"><span> {{((row.mappedProperty && row.mappedProperty.code) || 'Choose Property')}}</span>
+                                        </div>
+                                        <div class="layout-column layout-align-center-center"><i
+                                                class="fa fa-caret-down"></i></div>
+                                    </div>
+                                    <span ng-class="{'hidden': !row.dontImport}" class="padding-horizontal-5">
+                                                Will not import <span class="color-myki clickable"
+                                                                      ng-class="{'hidden': row.isNullColumn}"
+                                                                      ng-click="clearMapping(row)">Edit</span>
+                                            </span>
+                                </td>
+                                <td class="entity-checkbox">
+                                    <i class="fa fa-check color-myki" ng-class="{'hidden': !row.isMatched}"></i>
+                                    <i class="fa fa-times color-red" ng-class="{'hidden': row.isMatched}"></i>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div ng-class="{'hidden': state != 'profileMapping'}" class="flex">
+                    <span class="dropzoneTitle">Profiles</span>
+                    <div class="myki-widget layout-row csvMappingTable margin-vertical-15">
+                        <table class="table myki-table">
+                            <thead>
+                            <tr>
+                                <th>Profile from File</th>
+                                <th>Items' Profile</th>
+                                <th class="mykiPropertyColumn"> MYKI Profile</th>
+                                <th class="entity-checkbox">Status</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr ng-repeat="row in profileMappingRows">
+                                <td>
+                                    {{row.fileHeader}}
+                                </td>
+                                <td>
+                                    <ul>
+                                        <li ng-repeat="p in row.preview | limitTo:3">{{p.value}}</li>
+                                    </ul>
+                                </td>
+                                <td class="mykiPropertyColumn">
+                                    <div class="mappingColumn layout-row clickable"
+                                         popover-placement="{{($index < 2)?'bottom-right':'top-right'}}"
+                                         uib-popover-template="popoverProfileTemplateUrl"
+                                         popover-trigger="'outsideClick'"
+                                         popover-is-open="row.popverIsOpen" ng-class="{'hidden': row.dontImport}">
+                                        <div class="flex"><span> {{((row.mappedProperty && row.mappedProperty.companyName) || 'Choose Profile')}}</span>
+                                        </div>
+                                        <div class="layout-column layout-align-center-center"><i
+                                                class="fa fa-caret-down"></i></div>
+                                    </div>
+                                </td>
+                                <td class="entity-checkbox">
+                                    <i class="fa fa-check color-myki" ng-class="{'hidden': !row.isMatched}"></i>
+                                    <i class="fa fa-times color-red" ng-class="{'hidden': row.isMatched}"></i>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div ng-class="{'hidden': state !== 'summary'}" class="flex">
+                    <span class="dropzoneTitle">{{dropzoneTitle}} - {{itemCount}}</span>
+                    <widget-body ng-class="{'noPagination': mappedItems.length<=paginationInfo[0].paginationSteps[0]}">
+                        <table class="table myki-table csvMappingTable" ng-class="{'hidden': !itemsToImport.length}">
+                            <thead>
+                            <tr>
+                                <th></th>
+                                <th ng-class="{'hidden': selectedType.code != 'LOGIN'}">Website</th>
+                                <th>{{(selectedType.code == 'SECURE_NOTE')?'Note Name':'Nickname'}}</th>
+                                <th ng-class="{'hidden': selectedType.code != 'LOGIN'}">Username</th>
+                                <th ng-class="{'hidden': selectedType.code != 'LOGIN'}">Password</th>
+                                <th ng-class="{'hidden': selectedType.code != 'CREDIT_CARD'}">Cardholder Name</th>
+                                <th ng-class="{'hidden': selectedType.code != 'CREDIT_CARD'}">Card Number</th>
+                                <th ng-class="{'hidden': selectedType.code != 'CREDIT_CARD'}">Expiry Date</th>
+                                <th ng-class="{'hidden': selectedType.code != 'CREDIT_CARD'}">CVV</th>
+                                <th ng-class="{'hidden': selectedType.code != 'SECURE_NOTE'}">Note Content</th>
+                                <th ng-class="{'hidden': !hasProfile}" class="mykiPropertyColumn">Profile</th>
+                                <th></th>
+                                <th></th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr ng-repeat="item in itemsToImport = (mappedItems | filter:{isChecked:true})">
+                                <td><img ng-src="{{itemImgUrl(item)}}" height="30" width="30"/></td>
+                                <td ng-class="{'hidden':selectedType.code != 'LOGIN'}">{{item.url | trim:20:true}}</td>
+                                <td>{{item.nickname | trim:20:true}}</td>
+                                <td ng-class="{'hidden': selectedType.code != 'LOGIN'}">{{item.username |
+                                    trim:20:true}}
+                                </td>
+                                <td ng-class="{'hidden': selectedType.code != 'LOGIN'}">{{item.password |
+                                    trim:20:true}}
+                                </td>
+                                <td ng-class="{'hidden':selectedType.code != 'CREDIT_CARD'}">{{item.name |
+                                    trim:20:true}}
+                                </td>
+                                <td ng-class="{'hidden':selectedType.code != 'CREDIT_CARD'}">{{item.number |
+                                    trim:20:true}}
+                                </td>
+                                <td ng-class="{'hidden':selectedType.code != 'CREDIT_CARD'}">
+                                    {{item.exp_month}}/{{item.exp_year}}
+                                </td>
+                                <td ng-class="{'hidden':selectedType.code != 'CREDIT_CARD'}">{{item.cvv}}</td>
+                                <td ng-class="{'hidden': selectedType.code != 'SECURE_NOTE'}">{{item.content |
+                                    trim:20:true}}
+                                </td>
+                                <td ng-class="{'hidden': !hasProfile}" class="mykiPropertyColumn">
+                                    <!-- {{item.mykiProfile || 'Personal'}} -->
+                                    <div class="mappingColumn layout-row clickable"
+                                         popover-placement="{{($index < 2)?'bottom-right':'top-right'}}"
+                                         uib-popover-template="popoverProfileTemplateUrl" popover-trigger="'outsideClick'"
+                                         popover-is-open="item.popverIsOpen">
+                                        <div class="flex"><span> {{item.mykiProfile || 'Personal'}}</span>
+                                        </div>
+                                        <div class="layout-column layout-align-center-center"><i
+                                                class="fa fa-caret-down"></i></div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <span ng-class="{'hidden': item.isValid}">
+                                        <i class="fa fa-times color-red"></i> Invalid fields <br/> Will not import
+                                    </span>
+                                    <span ng-class="{'hidden': !item.isValid}">
+                                        <i class="fa fa-check color-myki"></i>
+                                    </span>
+                                </td>
+                                <td><i class="fa fa-trash clickable" ng-click="item.isChecked = false;"></i></td>
+                            </tr>
+                            </tbody>
+                        </table>
+
+                        <div ng-class="{'hidden': itemsToImport.length}" class="text-align-center margin-vertical-5">
+                            Nothing to import
+                        </div>
+                    </widget-body>
+                </div>
+            </div>
+        </div>
+
+        <div class="onBoardingFooter layout-row">
+            <div class="flex layout-column layout-align-center-start">
+                <button class="btn margin-horizontal-10 padding-horizontal-15" aria-label="Back"
+                        ng-class="{'hidden': state == 'selectType'}" ng-click="back()">
+                    <i class="fa fa-chevron-left margin-right-5"></i>Back
+                </button>
+            </div>
+            <div class="layout-row layout-align-center-center">
+                <button class="btn margin-horizontal-10 padding-horizontal-15"
+                        aria-label="{{(state == 'summary')?'Done':'Next'}}" ng-class="{'btn-primary': wizard.canGoNext}"
+                        ng-click="next()">
+                    {{(state == 'summary')?'Import':'Next'}}
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script src="import.min.js"></script>
+</html>

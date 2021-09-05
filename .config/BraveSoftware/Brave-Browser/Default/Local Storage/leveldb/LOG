@@ -1,0 +1,24 @@
+2021/09/05-13:18:18.345 3 Reusing MANIFEST /home/purush/.config/BraveSoftware/Brave-Browser/Default/Local Storage/leveldb/MANIFEST-000001
+2021/09/05-13:18:18.346 3 Recovering log #19
+2021/09/05-13:18:18.346 3 Reusing old log /home/purush/.config/BraveSoftware/Brave-Browser/Default/Local Storage/leveldb/000019.log 
+2021/09/05-14:58:33.668 8 Level-0 table #23: started
+2021/09/05-14:58:34.481 8 Level-0 table #23: 20808 bytes OK
+2021/09/05-14:58:34.535 8 Delete type=0 #19
+2021/09/05-16:24:18.819 5f Level-0 table #25: started
+2021/09/05-16:24:18.885 5f Level-0 table #25: 18351 bytes OK
+2021/09/05-16:24:18.938 5f Delete type=0 #22
+2021/09/05-17:02:39.943 77 Level-0 table #27: started
+2021/09/05-17:02:39.988 77 Level-0 table #27: 15408 bytes OK
+2021/09/05-17:02:40.469 77 Delete type=0 #24
+2021/09/05-17:02:40.473 77 Compacting 4@0 + 1@1 files
+2021/09/05-17:02:40.571 77 Generated table #28@0: 641 keys, 503277 bytes
+2021/09/05-17:02:40.571 77 Compacted 4@0 + 1@1 files => 503277 bytes
+2021/09/05-17:02:40.621 77 compacted to: files[ 0 1 1 0 0 0 0 ]
+2021/09/05-17:02:40.624 77 Delete type=2 #25
+2021/09/05-17:02:40.624 77 Delete type=2 #20
+2021/09/05-17:02:40.625 77 Delete type=2 #17
+2021/09/05-17:02:40.625 77 Delete type=2 #27
+2021/09/05-17:02:40.625 77 Delete type=2 #23
+2021/09/05-17:49:09.946 95 Level-0 table #30: started
+2021/09/05-17:49:10.225 95 Level-0 table #30: 14678 bytes OK
+2021/09/05-17:49:10.278 95 Delete type=0 #26
