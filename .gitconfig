@@ -1,0 +1,7 @@
+[init]
+	defaultBranch = main
+[user]
+	email = linuxlover@gmail.com
+	name =  purush7
+[pull]
+	rebase = false

@@ -1,0 +1,30 @@
+## env variables
+
+export PATH=$HOME/.npm-global/bin:$PATH
+export PATH=$HOME/bin:$PATH
+export PATH=/usr/local/go/bin:$PATH
+export EDITOR=/usr/bin/vim
+export GTK_THEME=Orchis-dark
+export GTK_ICON_THEME=Papirus-dark
+export GTK_CURSOR_THEME=Adwaita
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOPATH/bin
+export PROMPT_EOL_MARK=""
+export PATH=$PATH:~/.emacs.d/bin
+## bindings
+
+# bindkey -v
+# export KEYTIMEOUT=1
+
+
+
+
+## aliases
+# alias emacs="emacs -nw"
+alias wlc="wl-copy"
+alias wlp="wl-paste"
+alias gac="git add . && git commit"
+alias gpho="git push origin"
+alias gplo="git pull origin"
+alias dotfiles='/usr/bin/git --git-dir=/home/purush/.dotfiles/ --work-tree=/home/purush'
+alias etc='/usr/bin/git --git-dir=/home/purush/.etc/ --work-tree=/etc'
