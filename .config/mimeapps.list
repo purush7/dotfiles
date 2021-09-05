@@ -1,0 +1,5 @@
+[Added Associations]
+video/mp4=vlc.desktop;
+application/x-shellscript=org.gnome.gedit.desktop;
+text/plain=vlc.desktop;org.gnome.gedit.desktop;org.gnome.FileRoller.desktop;
+video/x-matroska=vlc.desktop;org.gnome.Totem.desktop;
