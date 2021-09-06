@@ -19,8 +19,8 @@ set $down j
 set $up k
 set $right l
 # Your preferred terminal emulator
-#set $term alacritty  --class=terminal
-set $term gnome-terminal  --class=terminal
+set $term alacritty  --class=terminal
+#set $term gnome-terminal  --class=terminal
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
