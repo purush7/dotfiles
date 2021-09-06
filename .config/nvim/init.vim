@@ -24,5 +24,5 @@ set cursorline
 
 
 " Keybindings
-imap jj <Esc>
+imap jk <Esc> A
 map <F2> :NERDTreeToggle<CR>
