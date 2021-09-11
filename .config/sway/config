@@ -41,8 +41,8 @@ set $grimshot ~/.config/sway/scripts/grimshot
 ### Output configuration
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 
-    output $external_monitor  pos -1920,0 resolution 1920x1080 bg ~/Pictures/default_wallpaper.svg fill
-    output $laptop pos 0,0 resolution 1920x1080 bg ~/Pictures/default_wallpaper.svg fill
+    output $external_monitor  pos 0,0 resolution 1920x1080 bg ~/Pictures/default_wallpaper.svg fill
+    output $laptop pos 1920,0 resolution 1920x1080 bg ~/Pictures/default_wallpaper.svg fill
 #
 # Example configuration:
 #
