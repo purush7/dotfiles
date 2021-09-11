@@ -14,7 +14,7 @@
         <mode>
           <width>1366</width>
           <height>768</height>
-          <rate>60.003639221191406</rate>
+          <rate>60.003139495849609</rate>
         </mode>
       </monitor>
     </logicalmonitor>
@@ -33,7 +33,7 @@
         <mode>
           <width>1920</width>
           <height>1080</height>
-          <rate>60.000495910644531</rate>
+          <rate>60</rate>
         </mode>
       </monitor>
     </logicalmonitor>
