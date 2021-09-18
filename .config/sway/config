@@ -80,7 +80,7 @@ exec_always ~/.config/sway/scripts/laptop-lid
 bindsym $mod+ Alt+$right exec '~/.config/sway/scripts/create_dynamic_lock_image && swaylock -f -i \
 /tmp/sway_lock_image.png'
 
-bindsym $mod+Alt+b exec nwgbar
+# bindsym $mod+Alt+b exec nwgb\ar
 
 
 # windows config
@@ -130,6 +130,12 @@ for_window [title="\ -\ Sharing\ Indicator$"] floating enable, sticky enable
 #
 # You can get the names of your inputs by running: swaymsg -t get_inputs
 # Read `man 5 sway-input` for more information about this section.
+
+input "type:keyboard" {
+    xkb_layout us
+    xkb_options caps:swapescape
+}
+
 
 ### Key bindings
 #
@@ -350,7 +356,7 @@ default_border none
 
 
 # waybar
- # exec waybar
+# exec waybar
 
 # dock
 bindsym $mod+Alt+d exec nwg-dock -o eDP-1
