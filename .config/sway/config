@@ -28,7 +28,7 @@ set $term gnome-terminal  --class=terminal
 set $menu rofi -show run --class=launcher
 
 #output variables
-set $laptop eDP-1
+## set $laptop eDP-1
 set $external_monitor HDMI-A-1
 set $grimshot ~/.config/sway/scripts/grimshot
 
@@ -42,7 +42,7 @@ set $grimshot ~/.config/sway/scripts/grimshot
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 
     output $external_monitor  pos 0,0 resolution 1920x1080 bg ~/Pictures/default_wallpaper.svg fill
-    output $laptop pos 1920,0 resolution 1920x1080 bg ~/Pictures/default_wallpaper.svg fill
+##   output $laptop pos 1920,0 resolution 1920x1080 bg ~/Pictures/default_wallpaper.svg fill
 #
 # Example configuration:
 #
@@ -53,10 +53,13 @@ set $grimshot ~/.config/sway/scripts/grimshot
 
 ### Automatically switch the output
 
-bindswitch --reload --locked lid:on output $laptop disable $external_monitor disable
-bindswitch --reload --locked lid:off output $laptop enable $external_monitor enable
+##  bindswitch --reload --locked lid:on output $laptop disable $external_monitor enable
+bindswitch --reload --locked lid:on output $external_monitor enable
 
-exec_always ~/.config/sway/scripts/laptop-lid
+## bindswitch --reload --locked lid:off output $laptop enable $external_monitor enable
+bindswitch --reload --locked lid:off output $external_monitor enable
+
+ ## exec_always ~/.config/sway/scripts/laptop-lid
 
 
 
