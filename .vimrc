@@ -1,9 +1,11 @@
+let g:skip_default_vim=1
 " set number
 set linebreak
 set showbreak=+++ 	
 set textwidth=100
 set showmatch
 set visualbell
+set showcmd
 
 set errorbells
 set hls
