@@ -12,7 +12,8 @@
 ### Variables
 #
 # Logo key. Use Mod1 for Alt.
-set $mod Mod4
+set $mod Mod1
+set $Win Mod4
 # Home row direction keys, like vim
 set $left h
 set $down j
@@ -69,10 +70,17 @@ bindswitch --reload --locked lid:on output $external_monitor enable
 #
 # Example configuration:
 #
- exec swayidle -w \
-          timeout 300 '~/.local/bin/create_dynamic_lock_image && swaylock -f -i /tmp/sway_lock_image.png' \
-	  timeout 600 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
-          before-sleep 'swaylock -f -c 000000'
+## exec swayidle -w \
+##      timeout 300 '~/.local/bin/create_dynamic_lock_image && swaylock -f -i /tmp/sway_lock_image.png' \
+##	  timeout 600 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
+##        before-sleep 'swaylock -f -c 000000'
+
+
+ bindsym $mod+$Win+$right exec 'physlock -sm -p "Hey, unlock me"'
+
+ exec swayidle -w timeout 300 'physlock -sm -p "Hey, unlock me"' \
+    timeout 600  'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
+    before-sleep 'physlock -sm -p "Hey, unlock me"'
 #
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
@@ -80,10 +88,10 @@ bindswitch --reload --locked lid:on output $external_monitor enable
 
 #Lockscreen
 
-bindsym $mod+ Alt+$right exec '~/.config/sway/scripts/create_dynamic_lock_image && swaylock -f -i \
-/tmp/sway_lock_image.png'
+## bindsym $mod+ $Win+$right exec '~/.config/sway/scripts/create_dynamic_lock_image && swaylock -f -i \
+## /tmp/sway_lock_image.png'
 
-# bindsym $mod+Alt+b exec nwgb\ar
+# bindsym $mod+$Win+b exec nwgb\ar
 
 
 # windows config
@@ -152,7 +160,7 @@ input "type:keyboard" {
 
     # Start your launcher
     bindsym $mod+d exec $menu
-    bindsym $mod+Alt+a exec nwggrid -o 0.7 -wm sway
+## bindsym $mod+$Win+a exec nwggrid -o 0.7 -wm sway
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
     # Despite the name, also works for non-floating windows.
@@ -362,6 +370,6 @@ default_border none
 # exec waybar
 
 # dock
-bindsym $mod+Alt+d exec nwg-dock -o eDP-1
+## bindsym $mod+$Win+d exec nwg-dock -o eDP-1
 
 include /etc/sway/config.d*
