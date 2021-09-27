@@ -9,14 +9,15 @@ set showcmd
 
 set errorbells
 set hls
-set hlsearch	
+set hlsearch
+set is
 set ignorecase	
 set incsearch	
 set smartcase
 syntax on
 
 set wildmenu
-set cursorline
+" set cursorline
 colorscheme murphy
 filetype indent on
 filetype plugin indent on
@@ -43,3 +44,7 @@ set mouse=a
 "Keybindings
 imap jk <Esc> A
 map  <F2> :NERDTreeToggle<CR>
+
+
+set clipboard=unnamedplus
+set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc
