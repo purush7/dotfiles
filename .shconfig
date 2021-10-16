@@ -26,5 +26,5 @@ alias wlp="wl-paste"
 alias gac="git add . && git commit"
 alias gpho="git push origin"
 alias gplo="git pull origin"
-alias dotfiles='/usr/bin/git --git-dir=/home/purush/.dotfiles/ --work-tree=/home/purush'
-alias etc='/usr/bin/git --git-dir=/home/purush/.etc/ --work-tree=/etc'
+alias dotfiles='/usr/bin/git --git-dir=/$HOME/.dotfiles/ --work-tree=/$HOME'
+alias etc='/usr/bin/git --git-dir=/$HOME/.etc/ --work-tree=/etc'

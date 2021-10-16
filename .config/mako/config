@@ -1,4 +1,0 @@
-default-timeout=4000
-
-[urgency=high]
-ignore-timeout=1
