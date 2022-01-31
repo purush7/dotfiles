@@ -2,10 +2,9 @@
 
 What is this repo?
 
-- This repo preserves the dotfiles for reproducing the environment
+- This repo is created to maintain the dotfiles
 
-
-Best practise of using this repo:
+How to use this repo?
 
 
 - Create a bare repo by using `git clone git@github.com:purush7/dotfiles.git --single-branch -b <branch> --bare $HOME/.dotfiles` in $HOME
@@ -20,8 +19,7 @@ echo "alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 - `dotfiles checkout <branch>`
 
 
-
-After modifying the dotfiles
+How to push the changes?
 
 - `dotfiles add <path> && dotfiles commit -m <msg>`
 - `dotfiles push origin`
