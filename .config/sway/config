@@ -76,7 +76,7 @@ bindswitch --reload --locked lid:on output $external_monitor enable
 ##        before-sleep 'swaylock -f -c 000000'
 
 
- bindsym $mod+$Win+$right exec 'physlock -sm -p "Hey, unlock me"'
+ bindsym $Win+$right exec 'physlock -sm -p "Hey, unlock me"'
 
  exec swayidle -w timeout 300 'physlock -sm -p "Hey, unlock me"' \
     timeout 600  'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
@@ -215,8 +215,9 @@ input "type:keyboard" {
 
 assign [app_id="firefox"] $ws1
 assign [class="Brave-browser"] $ws1
-assign [class="MYKI"]    $ws10
+assign [class="MYKI" ] $ws10
 for_window [class="Spotify"] move to workspace $ws9
+for_window [app_id="blueman-manager"] move to workspace $ws10
 assign [class="Code"]  $ws3
 assign [app_id="gedit"] $ws3
 assign [class="Emacs"] $ws3
