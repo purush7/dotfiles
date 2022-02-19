@@ -11,6 +11,8 @@ export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
 export PROMPT_EOL_MARK=""
 export PATH=$PATH:~/.emacs.d/bin
+export MOZ_ENABLE_WAYLAND=1
+
 ## bindings
 
 # bindkey -v
